@@ -21,7 +21,6 @@ public class App extends Application {
         stage.setTitle("Students Register");
         stage.setScene(scene);
         stage.show();
-
     }
 
     public static void main(String[] args) {
