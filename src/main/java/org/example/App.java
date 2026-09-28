@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.example.model.Model;
 
 import java.io.IOException;
 
@@ -18,6 +19,8 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader loader = new FXMLLoader(App.class.getResource("FXMLStudentsScene.fxml"));
         Scene scene = new Scene(loader.load());
+
+        ((FXMLStudentsSceneController)loader.getController()).setModel(new Model());
         stage.setTitle("Students Register");
         stage.setScene(scene);
         stage.show();
