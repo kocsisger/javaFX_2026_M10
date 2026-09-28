@@ -17,6 +17,22 @@ public class FXMLStudentsSceneController {
     private Label seasonsLabel;
 
     @FXML
+    private Label creditsLabel;
+
+    @FXML
+    private Label dateOfBirthLabel;
+
+    @FXML
+    private Label nameLabel;
+
+    @FXML
+    void handleLoadButtonPressed(ActionEvent event) {
+        nameLabel.setText(model.getStudent().getName());
+        creditsLabel.setText("" + model.getStudent().getCredits());
+        dateOfBirthLabel.setText(model.getStudent().getDateOfBirth().toString());
+    }
+
+    @FXML
     void handleButtonPressed(ActionEvent event) {
         if (seasonsLabel.getText().equals("Winter"))
             seasonsLabel.setText("Summer");
