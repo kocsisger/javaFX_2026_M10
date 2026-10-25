@@ -27,7 +27,7 @@ public class FXMLStudentsSceneController {
 
     @FXML
     void handleLoadButtonPressed(ActionEvent event) {
-        refreshNameLabel();
+        nameLabel.textProperty().bind(model.getStudent().nameProperty());
         creditsLabel.setText("" + model.getStudent().getCredits());
         dateOfBirthLabel.setText(model.getStudent().getDateOfBirth().toString());
         System.out.println("F I R E W O R K ! ! !");
@@ -36,11 +36,6 @@ public class FXMLStudentsSceneController {
     @FXML
     void handleChangeButtonPressed(ActionEvent event) {
         model.getStudent().setName("Tom Smith");
-        refreshNameLabel();
-    }
-
-    private void refreshNameLabel() {
-        nameLabel.setText(model.getStudent().getName());
     }
 
     @FXML
